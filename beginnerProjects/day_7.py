@@ -14,7 +14,7 @@ word_length = len(chosen_word)
 lives = 6
 
 print(hangman_art.logo)
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 # Append '_' to the empty list
 display = []
 for letter in chosen_word:
