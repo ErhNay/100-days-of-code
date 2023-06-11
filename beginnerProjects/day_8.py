@@ -64,20 +64,16 @@
 # Project of the day  (Caesar Cipher)
 # from art import logo
 import art
+logo = art.logo
+print(logo)
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
             'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
             'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-logo = art.logo
-print(logo)
 
 
-# TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet?
-# Try running the program and entering a shift number of 45.
-# Add some code so that the program continues to work even if the user enters a shift number greater than 26.
-# Hint: Think about how you can use the modulus (%).
-
+# The Shift function
 def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
     if cipher_direction == "decode":
@@ -93,8 +89,9 @@ def caesar(start_text, shift_amount, cipher_direction):
 
 
 should_continue = True
-
+# Continue encoding and decoding
 while should_continue:
+    # User Inputs
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
