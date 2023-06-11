@@ -34,5 +34,44 @@ programming_dictionary = {
 # ************The number of items in a Dictionary***************
 # print(len(programming_dictionary))
 # *********Looping through a list **************
-for key in programming_dictionary:
-    print(f"{key} : {programming_dictionary[key]}")
+# for student in programming_dictionary:
+#     print(f"{student} : {programming_dictionary[student]}")
+
+#   Exercise 1 -  The Grading Program
+scores = {
+    "Harry": 81,
+    "Ron": 78,
+    "Hermione": 99,
+    "Draco": 74,
+    "Neville": 100,
+}
+
+# An Empty Dictionary
+student_grades = {}
+
+# Add Grade Interpretation
+for student in scores:
+    score = scores[student]
+    # Simplify Chained Comparison
+    if 91 <= score <= 100:
+        student_grades[student] = "Outstanding"
+    elif 81 <= score <= 90:
+        student_grades[student] = "Exceeds Expectations"
+    elif 71 <= score <= 80:
+        student_grades[student] = "Acceptable"
+    else:
+        student_grades[student] = "Fail"
+        
+print(student_grades)
+
+# Gives the same results as the above
+# for student in scores:
+#     score = scores[student]
+#     if score >= 91 and score <= 100:
+#        student_grades[student] = "Outstanding"
+#     elif score >= 81 and score <= 90:
+#         student_grades[student] = "Exceeds Expectation"
+#     elif score >= 71 and score <= 80:
+#         student_grades[student] = "Acceptable"
+#     else:
+#         student_grades[student] = "Fail"
