@@ -38,31 +38,31 @@ programming_dictionary = {
 #     print(f"{student} : {programming_dictionary[student]}")
 
 #   Exercise 1 -  The Grading Program
-scores = {
-    "Harry": 81,
-    "Ron": 78,
-    "Hermione": 99,
-    "Draco": 74,
-    "Neville": 100,
-}
-
-# An Empty Dictionary
-student_grades = {}
-
-# Add Grade Interpretation
-for student in scores:
-    score = scores[student]
-    # Simplify Chained Comparison
-    if 91 <= score <= 100:
-        student_grades[student] = "Outstanding"
-    elif 81 <= score <= 90:
-        student_grades[student] = "Exceeds Expectations"
-    elif 71 <= score <= 80:
-        student_grades[student] = "Acceptable"
-    else:
-        student_grades[student] = "Fail"
-        
-print(student_grades)
+# scores = {
+#     "Harry": 81,
+#     "Ron": 78,
+#     "Hermione": 99,
+#     "Draco": 74,
+#     "Neville": 100,
+# }
+#
+# # An Empty Dictionary
+# student_grades = {}
+#
+# # Add Grade Interpretation
+# for student in scores:
+#     score = scores[student]
+#     # Simplify Chained Comparison
+#     if 91 <= score <= 100:
+#         student_grades[student] = "Outstanding"
+#     elif 81 <= score <= 90:
+#         student_grades[student] = "Exceeds Expectations"
+#     elif 71 <= score <= 80:
+#         student_grades[student] = "Acceptable"
+#     else:
+#         student_grades[student] = "Fail"
+#
+# print(student_grades)
 
 # Gives the same results as the above
 # for student in scores:
@@ -75,3 +75,49 @@ print(student_grades)
 #         student_grades[student] = "Acceptable"
 #     else:
 #         student_grades[student] = "Fail"
+
+# ****************** NESTING ************************
+capitals = {
+    "Spain": "Madrid",
+    "Norway": "Oslo",
+    "Finland": "Helsinki"
+}
+
+# Nesting a list in a dictionary
+# travel_log = {
+#     "Spain": ["Madrid", "Malaga", "Gijon"],
+#     "Norway": ["Oslo", "Molde", "Stavanger"],
+#     "Finland": ["Helsinki", "Vyborg", "Turku"],
+# }
+
+# Nesting a dictionary in a dictionary
+# travel_log = {
+#     "Spain": {"cities_visited": ["Madrid", "Malaga", "Gijon"], "total_visits": 12},
+#     "Norway": {"cities_visited": ["Oslo", "Molde", "Stavanger"], "total_visits": 15},
+#     "Finland": {"cities_visited": ["Helsinki", "Vyborg", "Turku"], "total_visits": 8},
+# }
+
+# Nesting a dictionary in a list
+
+travel_log = [
+    {
+        "country": "Spain",
+        "cities_visited": ["Madrid", "Malaga", "Gijon"],
+        "total_visits": 12
+
+    },
+    {
+        "country": "Norway",
+        "cities_visited": ["Oslo", "Molde", "Stavanger"],
+        "total_visits": 15
+    },
+    {
+        "country": "Finland",
+        "cities_visited": ["Helsinki", "Vyborg", "Gijon"],
+        "total_visits": 8
+    }
+]
+
+for tl in travel_log:
+    for log in tl:
+        print(f"{log}: {tl[log]}")
