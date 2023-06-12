@@ -1,14 +1,15 @@
 # Day 9's Lessons, exercises and Project
 # Dictionary, Nesting and Secret Auction
 
-# First Python Dictionary
-programming_dictionary = {
-    "Bug": "An error in a program that prevents the program from running as expected.",
-    "Function": "A piece of code that you can easily call over and over again.",
-    "Loop": "An action done repeatedly",
-    True: "True",
-    123: "This is a number"
-}
+
+# # First Python Dictionary
+# programming_dictionary = {
+#     "Bug": "An error in a program that prevents the program from running as expected.",
+#     "Function": "A piece of code that you can easily call over and over again.",
+#     "Loop": "An action done repeatedly",
+#     True: "True",
+#     123: "This is a number"
+# }
 
 # *************Retrieving an item from a Dictionary****************
 # print(programming_dictionary["Bug"])
@@ -77,11 +78,11 @@ programming_dictionary = {
 #         student_grades[student] = "Fail"
 
 # ****************** NESTING ************************
-capitals = {
-    "Spain": "Madrid",
-    "Norway": "Oslo",
-    "Finland": "Helsinki"
-}
+# capitals = {
+#     "Spain": "Madrid",
+#     "Norway": "Oslo",
+#     "Finland": "Helsinki"
+# }
 
 # Nesting a list in a dictionary
 # travel_log = {
@@ -99,25 +100,112 @@ capitals = {
 
 # Nesting a dictionary in a list
 
-travel_log = [
-    {
-        "country": "Spain",
-        "cities_visited": ["Madrid", "Malaga", "Gijon"],
-        "total_visits": 12
+# travel_log = [
+#     {
+#         "country": "Spain",
+#         "cities_visited": ["Madrid", "Malaga", "Gijon"],
+#         "total_visits": 12
+#
+#     },
+#     {
+#         "country": "Norway",
+#         "cities_visited": ["Oslo", "Molde", "Stavanger"],
+#         "total_visits": 15
+#     },
+#     {
+#         "country": "Finland",
+#         "cities_visited": ["Helsinki", "Vyborg", "Gijon"],
+#         "total_visits": 8
+#     }
+# ]
+#
+# for tl in travel_log:
+#     for log in tl:
+#         print(f"{log}: {tl[log]}")
 
-    },
-    {
-        "country": "Norway",
-        "cities_visited": ["Oslo", "Molde", "Stavanger"],
-        "total_visits": 15
-    },
-    {
-        "country": "Finland",
-        "cities_visited": ["Helsinki", "Vyborg", "Gijon"],
-        "total_visits": 8
-    }
-]
+# Exercise 2 Dictionary in List
 
-for tl in travel_log:
-    for log in tl:
-        print(f"{log}: {tl[log]}")
+# travel_log = [
+#     {
+#         "country": "France",
+#         "visits": 12,
+#         "cities": ["Paris", "Lille", "Dijon"]
+#     },
+#     {
+#         "country": "Germany",
+#         "visits": 5,
+#         "cities": ["Berlin", "Hamburg", "Stuttgart"]
+#     },
+# ]
+
+
+# def add_new_country(country, visits, cities_visited):
+#     #     new_country = {}
+#     #     new_country["country"] = country
+#     #     new_country["visits"] = visits
+#     #     new_country["cities"] = cities_visited
+#     #     travel_log.append(new_country)
+#     travel_log.append({
+#         "country": country,
+#         "visits": visits,
+#         "cities": cities_visited
+#     })
+#
+#
+# add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+# # print(travel_log)
+# # for log in travel_log:
+# #     print(log)
+#
+# new_travel_log = travel_log
+# print(new_travel_log)
+# new_travel_log.append({
+#     "country": "Ghana",
+#     "visits": 45,
+#     "cities": ["Accra", "Kumasi", "Cape Coast"]})
+# print(new_travel_log)
+
+
+# The Days Project Blind - Auction
+# *********************** SECRET AUCTION ******************************
+# Run this code in replit, to leverage replit's clear() function
+from blind_auction_art import logo
+
+# from replit import clear
+print(logo)
+auction_bidders = {}
+continue_auction = True
+
+
+def highest_bidder(auction):
+    highest_value = 0
+    highest_bidder = ""
+    for bidder in auction:
+        bid_amount = auction[bidder]
+        if bid_amount > 0:
+            highest_value = bid_amount
+            highest_bidder = bidder
+    print(f"The winner is {highest_bidder}, with a bid of ${highest_value}.")
+
+
+while continue_auction:
+    name = input("Please enter your name: ")
+    price = int(input("What is your bid price: $"))
+
+
+    # Populate the auction dictionary
+
+    def bidder_info(bidder_name, bid_price):
+        # auction[bidder_name] = bid_price
+        auction_bidders.update({bidder_name: bid_price})
+
+
+    bidder_info(name, price)
+    add_bidder = input("Are there any other bidders? Type 'yes' or 'no'.\n")
+
+    if add_bidder == 'yes':
+        print("Screen Cleared")
+    #     clear()
+    else:
+        continue_auction = False
+        highest_bidder(auction_bidders)
