@@ -201,9 +201,9 @@ while continue_auction:
 
 
     bidder_info(name, price)
-    add_bidder = input("Are there any other bidders? Type 'yes' or 'no'.\n")
+    another_bidder = input("Are there any other bidders? Type 'yes' or 'no'.\n")
 
-    if add_bidder == 'yes':
+    if another_bidder == 'yes':
         print("Screen Cleared")
     #     clear()
     else:
