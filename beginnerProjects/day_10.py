@@ -13,6 +13,7 @@
 
 # ****************** Exercise 1 DAYS IN MONTH ************************
 def is_leap(year):
+    """Returns True if a given year is a leap year or False if otherwise """
     if year % 4 == 0:
         if year % 100 == 0:
             if year % 400 == 0:
@@ -26,6 +27,7 @@ def is_leap(year):
 
 
 def days_in_month(a_year, a_month):
+    """Returns the number days in a given month"""
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if a_month > len(month_days):
         return "Please enter a valid number!"
