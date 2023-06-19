@@ -48,7 +48,7 @@ random_data1 = choice(data)
 random_data2 = choice(data)
 
 # Generate new data if both data are equal
-if random_data1 == random_data2:
+while random_data1 == random_data2:
     random_data2 = choice(data)
 
 # Game Repetition
@@ -94,7 +94,7 @@ while not should_compare:
 #
 # def game():
 #     print(logo)
-#     score = 0
+#     score = 0A
 #     game_should_continue = True
 #     account_a = get_random_account()
 #     account_b = get_random_account()
