@@ -33,7 +33,8 @@ resources = {
 def is_resource_sufficient(order_ingredients):
     """Returns False and a feedback message  if ingredients are not sufficient,  
     otherwise returns True"""
-    print(order_ingredients)
+    
+    
     for item in  order_ingredients:
         
         if order_ingredients[item] >= resources[item]:
@@ -58,6 +59,7 @@ def process_coins():
     total += int(input("How many nickels? ")) * 0.05
     
     total += int(input("How many pennies? ")) * 0.01
+    
     return total
 
 
@@ -93,8 +95,7 @@ def make_coffee(drink_name, order_ingredients):
     
     
     
-    
-    
+
     
     
 is_machine_on = True
@@ -115,7 +116,6 @@ while is_machine_on:
         print(f"Money:${profit}")
     else:
         drink = MENU[choice]
-        print(drink)
         
         if is_resource_sufficient(drink['ingredients']):
             
@@ -127,4 +127,3 @@ while is_machine_on:
                 
                 
         
-            
